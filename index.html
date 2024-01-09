@@ -50,27 +50,24 @@
     const ctx2 = canvas2.getContext("2d")
     const btn = document.querySelector('div')
     const img = new Image()
-    img.src = './sc1.png'
-    img.onload = () => {
+    getCode()
+    btn.onclick = () => {
         getCode()
-        btn.onclick = () => {
-            getCode()
-        }
-        function getCode() {
-            ctx2.clearRect(0, 0, 50, 25)
-            let backgc = getColor()
-            canvas2.style.backgroundColor = `rgba(${backgc},0.4)`
-            let textColor = getColor()
-            ctx2.fillStyle = `rgb(${textColor})`
-            let fontS = randomNumber(10, 20)
-            ctx2.font = `${fontS}px serif`
-            let x = randomNumber(0, 15)
-            let y = randomNumber(15, 20)
-            let randomCode = getRandomCode(4)
-            ctx2.fillText(randomCode, x, y)
-            randomCycle(50, ctx2, textColor)
-            randomLine(2, ctx2, textColor)
-        }
+    }
+    function getCode() {
+        ctx2.clearRect(0, 0, 50, 25)
+        let backgc = getColor()
+        canvas2.style.backgroundColor = `rgba(${backgc},0.4)`
+        let textColor = getColor()
+        ctx2.fillStyle = `rgb(${textColor})`
+        let fontS = randomNumber(10, 20)
+        ctx2.font = `${fontS}px serif`
+        let x = randomNumber(0, 15)
+        let y = randomNumber(15, 20)
+        let randomCode = getRandomCode(4)
+        ctx2.fillText(randomCode, x, y)
+        randomCycle(50, ctx2, textColor)
+        randomLine(2, ctx2, textColor)
     }
 
     function getColor() {
