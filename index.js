@@ -88,6 +88,13 @@ fileEl.onchange = () => {
                         rectHeight + 2)
                     url = cvs.toDataURL()
                 }
+                /* 拿到下载按钮 */
+                let btnEl = document.querySelector('.download')
+                let aEl = btnEl.querySelector('a')
+                btnEl.onclick = () => {
+                    aEl.download = "avatar.png"
+                    aEl.href = url
+                }
             })
             img.src = base_url;
             img.classList.add('floor')
